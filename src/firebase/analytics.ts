@@ -1,14 +1,18 @@
-import { getAnalytics,logEvent } from 'firebase/analytics';
-import type { FirebaseApp } from 'firebase/app';
-import type { Analytics, EventParams, AnalyticsCallOptions } from 'firebase/analytics';
+import { getAnalytics, logEvent } from "firebase/analytics";
+import type { FirebaseApp } from "firebase/app";
+import type {
+	Analytics,
+	EventParams,
+	AnalyticsCallOptions,
+} from "firebase/analytics";
 
-export function  initAnalytics(app: FirebaseApp) {
-  return getAnalytics(app); 
+export function initAnalytics(app: FirebaseApp) {
+	return getAnalytics(app);
 }
 
 export function setEvent(analytics: Analytics, event: Event) {
-  // Log the event
-  logEvent(analytics, event.name, event.params, event.options)
+	// Log the event
+	logEvent(analytics, event.name, event.params, event.options);
 }
 
 // Google Analytics 4 event parameters
@@ -45,43 +49,43 @@ export function setEvent(analytics: Analytics, event: Event) {
 // view_promotion ユーザーがプロモーションを表示したことを示す
 
 type Event = {
-  name: AnalyticsEvents;
-  params?:{ // ref > https://developers.google.com/analytics/devguides/collection/ga4/reference/events?hl=ja&client_type=gtag
-    affiliation?: EventParams['affiliation'],
-    checkout_option?: EventParams['checkout_option'],
-    checkout_step?: EventParams['checkout_step'],
-    content_type?: EventParams['content_type'],
-    coupon?: EventParams['coupon'],
-    currency?: EventParams['currency'],
-    description?: EventParams['description'],
-    event_category?: EventParams['event_category'],
-    event_label?: EventParams['event_label'],
-    fatal?: EventParams['fatal'],
-    firebase_screen_class?: EventParams['firebase_screen_class'],
-    firebase_screen?: EventParams['firebase_screen'],
-    item_id?: EventParams['item_id'],
-    item_list_id?: EventParams['item_list_id'],
-    item_list_name?: EventParams['item_list_name'],
-    items?: EventParams['items'],
-    method?: EventParams['method'],
-    number?: EventParams['number'],
-    page_location?: EventParams['page_location'],
-    page_path?: EventParams['page_path'],
-    page_title?: EventParams['page_title'],
-    payment_type?: EventParams['payment_type'],
-    promotion_id?: EventParams['promotion_id'],
-    promotion_name?: EventParams['promotion_name'],
-    promotions?: EventParams['promotions'],
-    screen_name?: EventParams['screen_name'],
-    search_term?: EventParams['search_term'],
-    shipping_tier?: EventParams['shipping_tier'],
-    shipping?: EventParams['shipping'],
-    tax?: EventParams['tax'],
-    transaction_id?: EventParams['transaction_id'],
-    value?: EventParams['value'],
-  },
-  options?:AnalyticsCallOptions
-}
+	name: AnalyticsEvents;
+	params?: {
+		// ref > https://developers.google.com/analytics/devguides/collection/ga4/reference/events?hl=ja&client_type=gtag
+		affiliation?: EventParams["affiliation"];
+		checkout_option?: EventParams["checkout_option"];
+		checkout_step?: EventParams["checkout_step"];
+		content_type?: EventParams["content_type"];
+		coupon?: EventParams["coupon"];
+		currency?: EventParams["currency"];
+		description?: EventParams["description"];
+		event_category?: EventParams["event_category"];
+		event_label?: EventParams["event_label"];
+		fatal?: EventParams["fatal"];
+		firebase_screen_class?: EventParams["firebase_screen_class"];
+		firebase_screen?: EventParams["firebase_screen"];
+		item_id?: EventParams["item_id"];
+		item_list_id?: EventParams["item_list_id"];
+		item_list_name?: EventParams["item_list_name"];
+		items?: EventParams["items"];
+		method?: EventParams["method"];
+		number?: EventParams["number"];
+		page_location?: EventParams["page_location"];
+		page_path?: EventParams["page_path"];
+		page_title?: EventParams["page_title"];
+		payment_type?: EventParams["payment_type"];
+		promotion_id?: EventParams["promotion_id"];
+		promotion_name?: EventParams["promotion_name"];
+		promotions?: EventParams["promotions"];
+		screen_name?: EventParams["screen_name"];
+		search_term?: EventParams["search_term"];
+		shipping_tier?: EventParams["shipping_tier"];
+		shipping?: EventParams["shipping"];
+		tax?: EventParams["tax"];
+		transaction_id?: EventParams["transaction_id"];
+		value?: EventParams["value"];
+	};
+	options?: AnalyticsCallOptions;
+};
 
-export type  AnalyticsEvents = "init_app"
-
+export type AnalyticsEvents = "init_app";
