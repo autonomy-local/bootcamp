@@ -1,7 +1,5 @@
 import { render } from "solid-js/web";
-
-import { TodoList } from "./todo-list";
-
+import { App } from "./app";
 import "./index.css";
 
 const root = document.getElementById("root");
@@ -12,4 +10,8 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 	);
 }
 
-render(() => <TodoList />, root!);
+if (!root) {
+	throw new Error("Root element not found.");
+}
+
+render(() => <App />, root);
