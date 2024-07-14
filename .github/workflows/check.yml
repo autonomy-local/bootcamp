@@ -1,0 +1,15 @@
+# when push to master branch, run the following jobs
+# 1. checkout the code format
+# 2. run unit tests
+
+name: Check
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install
+      - run: pnpm format:check
+      - run: pnpm test

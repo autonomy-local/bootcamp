@@ -10,7 +10,8 @@
     "serve": "vite preview",
     "test": "vitest",
     "lint:code": "biome lint",
-    "format:code": "biome format"
+    "format:check": "biome format",
+    "format:code": "biome format --write"
   },
   "license": "MIT",
   "devDependencies": {
